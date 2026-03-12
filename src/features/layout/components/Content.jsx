@@ -16,7 +16,6 @@ import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 
 export function Content() {
-
   const servicios = [
     {
       title: 'Modelos Únicos',
@@ -42,18 +41,17 @@ export function Content() {
 
   return (
     <Box sx={{ backgroundColor: '#121212', color: 'white', overflowX: 'hidden' }}>
-
+      
+      {/* SECCIÓN HERO (Se mantiene igual, optimizada) */}
       <Box
         sx={{
           position: 'relative',
-          height: { xs: 'auto', md: '85vh' },
-          minHeight: { xs: '500px', md: '700px' },
+          height: { xs: 'auto', md: '80vh' },
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           textAlign: 'center',
-          pt: { xs: 12, md: 0 }, // Espacio para el header en móvil si es fixed
-          pb: { xs: 8, md: 0 },
+          py: { xs: 10, md: 0 },
           px: 2,
           backgroundImage: 'url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070")',
           backgroundSize: 'cover',
@@ -67,147 +65,76 @@ export function Content() {
         }}
       >
         <Box sx={{ position: 'relative', zIndex: 1, maxWidth: 900 }}>
-          <Typography
-            variant="h1"
-            sx={{
-              fontWeight: 900,
-              fontSize: { xs: '2.2rem', sm: '3.5rem', md: '4.5rem' },
-              lineHeight: 1.1,
-              mb: 3
-            }}
-          >
-            PASIÓN POR LA{' '}
-            <Box component="span" sx={{ 
-              color: '#90caf9',
-              display: { xs: 'block', sm: 'inline' } // Salto de línea estético en móvil
-            }}>
-              VELOCIDAD
-            </Box>
+          <Typography variant="h1" sx={{ fontWeight: 900, fontSize: { xs: '2.5rem', md: '4rem' }, mb: 3 }}>
+            PASIÓN POR LA <Box component="span" sx={{ color: '#90caf9' }}>VELOCIDAD</Box>
           </Typography>
-
-          <Typography 
-            variant="h6" 
-            sx={{ 
-              mb: 5, 
-              opacity: 0.85, 
-              fontSize: { xs: '1rem', md: '1.25rem' },
-              maxWidth: '600px',
-              mx: 'auto'
-            }}
-          >
-            Encuentra los vehículos más exclusivos y gestiona tu colección personal con tecnología de punta.
-          </Typography>
-
-          <Stack
-            direction={{ xs: 'column', sm: 'row' }}
-            spacing={2}
-            justifyContent="center"
-            sx={{ width: { xs: '100%', sm: 'auto' }, px: { xs: 4, sm: 0 } }}
-          >
-            <Button
-              component={Link}
-              to="/articles"
-              variant="contained"
-              size="large"
-              fullWidth={{ xs: true, sm: false }}
-              sx={{
-                bgcolor: '#90caf9',
-                color: '#000',
-                fontWeight: 'bold',
-                py: 1.5,
-                px: 4,
-                borderRadius: '12px'
-              }}
-            >
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center">
+            <Button component={Link} to="/articles" variant="contained" sx={{ bgcolor: '#90caf9', color: '#000', fontWeight: 'bold', borderRadius: 3, px: 4 }}>
               Explorar Artículos
             </Button>
-
-            <Button
-              component={Link}
-              to="/mybuys"
-              variant="outlined"
-              size="large"
-              fullWidth={{ xs: true, sm: false }}
-              sx={{
-                borderColor: '#90caf9',
-                color: '#90caf9',
-                py: 1.5,
-                px: 4,
-                borderRadius: '12px',
-                '&:hover': { borderColor: '#64b5f6', bgcolor: 'rgba(144,202,249,0.05)' }
-              }}
-            >
+            <Button component={Link} to="/mybuys" variant="outlined" sx={{ borderColor: '#90caf9', color: '#90caf9', borderRadius: 3, px: 4 }}>
               Mis Compras
             </Button>
           </Stack>
         </Box>
       </Box>
 
-      {/* ================= SERVICIOS ================= */}
+      {/* ================= SECCIÓN DE SERVICIOS ACTUALIZADA ================= */}
       <Container sx={{ py: { xs: 8, md: 12 } }}>
-
-        <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 8 } }}>
-          <Typography
-            variant="h3"
-            sx={{
-              fontWeight: 800,
-              fontSize: { xs: '1.8rem', md: '2.8rem' },
-              mb: 2
-            }}
-          >
+        <Box sx={{ textAlign: 'center', mb: 8 }}>
+          <Typography variant="h3" sx={{ fontWeight: 800, fontSize: { xs: '2rem', md: '2.8rem' }, mb: 2 }}>
             Nuestros Servicios
           </Typography>
           <Box sx={{ width: 60, height: 4, bgcolor: '#90caf9', mx: 'auto', borderRadius: 2 }} />
         </Box>
 
-        <Grid container spacing={{ xs: 3, md: 4 }}>
+        <Grid container spacing={3}>
           {servicios.map((servicio, index) => (
-            <Grid key={index} size={{ xs: 12, sm: 6, md: 3 }}>
+            <Grid 
+              key={index} 
+              size={{ xs: 12, sm: 6, md: 3 }}
+            >
               <Card
                 sx={{
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
-                  alignItems: { xs: 'flex-start', md: 'center' }, // Alineación lateral en móvil para variar
-                  textAlign: { xs: 'left', md: 'center' },
-                  background: 'rgba(255, 255, 255, 0.03)',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                  background: 'rgba(255, 255, 255, 0.05)',
                   backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255,255,255,0.05)',
-                  borderRadius: 6,
-                  p: { xs: 4, md: 5 },
-                  transition: '0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  borderRadius: 4,
+                  p: 4,
+                  transition: '0.3s',
                   '&:hover': {
-                    transform: 'translateY(-8px)',
+                    transform: 'translateY(-5px)',
                     borderColor: '#90caf9',
-                    background: 'rgba(144,202,249,0.05)',
+                    background: 'rgba(144,202,249,0.08)',
                   }
                 }}
               >
                 <Box
                   sx={{
-                    width: 60,
-                    height: 60,
-                    borderRadius: '16px',
+                    width: 50,
+                    height: 50,
+                    borderRadius: 2,
                     backgroundColor: 'rgba(144,202,249,0.1)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    mb: 3,
-                    color: '#90caf9',
-                    '& svg': { fontSize: 30 }
+                    mb: 2,
+                    color: '#90caf9'
                   }}
                 >
                   {servicio.icon}
                 </Box>
 
-                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1.5 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, fontSize: '1.1rem' }}>
                   {servicio.title}
                 </Typography>
 
-                <Typography
-                  variant="body2"
-                  sx={{ color: '#888', lineHeight: 1.6 }}
-                >
+                <Typography variant="body2" sx={{ color: '#aaa', lineHeight: 1.6 }}>
                   {servicio.desc}
                 </Typography>
               </Card>
