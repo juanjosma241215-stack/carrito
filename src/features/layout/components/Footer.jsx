@@ -71,6 +71,7 @@ export function Footer() {
             </Stack>
           </Grid>
 
+          {/* SECCIÓN CONTACTO */}
           <Grid size={{ xs: 12, sm: 6, md: 4 }} sx={{ textAlign: { xs: 'center', md: 'left' } }}>
             <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 2 }}>Contacto</Typography>
             <Stack spacing={2} alignItems={{ xs: 'center', md: 'flex-start' }}>
